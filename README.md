@@ -20,8 +20,10 @@ require several Vim restarts
 [ack.vim](https://github.com/mileszs/ack.vim) — file content search \
 [Coc.nvim](https://github.com/neoclide/coc.nvim) — language server
 
+## Insert Mode
+jk &nbsp; enter normal mode
+
 ## Normal Mode
-### jk &nbsp; enter normal mode
 \<C-h/j/k/l\> &nbsp; navigate between windows \
 \<Space\>=/- &nbsp; resize window \
 \<Space\>\[1–9] &nbsp; navigate between tabs \
