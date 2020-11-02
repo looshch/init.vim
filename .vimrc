@@ -192,14 +192,14 @@ noremap <leader>9 9gt
 " save all files in tabs
 nnoremap <silent> <C-s> :wa<CR>
 " clear search on <C-/>
-nnoremap <silent> <C-_> :let @/ = ""<CR>
+nnoremap <silent> <C-/> :let @/ = ""<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
 " execute macro over lines in visual mode
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
-" vim-move. Gnome terminal accepts Alt as Esc so there is workaround for this behaviour
+" vim-move. Gnome and macOS default terminals accept Alt as Esc so there is workaround for this behaviour
 execute "set <A-h>=\eh"
 execute "set <A-j>=\ej"
 execute "set <A-k>=\ek"
@@ -265,12 +265,3 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" prevent garbage character sequences in status line
-set t_u7=
-set t_8f=
-set t_8b=
-set t_SH=
-set t_RV=
-let &t_TI = ""
-let &t_TE = ""
