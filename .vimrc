@@ -199,7 +199,7 @@ nnoremap <silent> <leader>- :vertical resize -15<CR>
 " execute macro over lines in visual mode
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
-" vim-move. Gnome terminal accepts Alt as Esc so there is workaround for this behaviour
+" vim-move. Gnome and macOS default terminals accept Alt as Esc so there is workaround for this behaviour
 execute "set <A-h>=\eh"
 execute "set <A-j>=\ej"
 execute "set <A-k>=\ek"

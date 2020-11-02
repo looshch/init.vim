@@ -1,6 +1,8 @@
 # .vimrc for Front-end Development
 Uses [vim-plug](https://github.com/junegunn/vim-plug). vim-X11 is recommended for system clipboard support
 
+## [macOS version](https://github.com/looshch/.vimrc/tree/macos)
+
 ## Dependencies
 [Yarn](https://yarnpkg.com/), [ack](https://beyondgrep.com/)
 
