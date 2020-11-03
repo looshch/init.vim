@@ -85,7 +85,7 @@ set splitright
 " open new windows below
 set splitbelow
 " set system clipboard as default
-set clipboard=unnamedplus
+set clipboard=unnamed
 " time to wait till mapping completion
 set tm=400
 " prefered number of lines before horizontal edges while scrolling
