@@ -30,8 +30,6 @@ call plug#end()
 " theme
 colorscheme gruvbox
 
-" auto-read files changed outside vim
-set autoread
 " don’t create backup files
 set nobackup
 " don’t write backup files
@@ -48,12 +46,8 @@ set tabstop=2
 set softtabstop=2
 " use spaces instead of tabs
 set expandtab
-" take into consideration shiftwidth at beginning of line
-set smarttab
 " take into consideration file extension
 set smartindent
-" auto-indent current line to match indentation of previous one on Enter
-set autoindent
 " indentation for indenting tools
 set shiftwidth=2
 " round indentation to the nearest multiple of shiftwidth
@@ -72,10 +66,6 @@ set novisualbell
 set t_vb=
 " don’t wrap lines
 set nowrap
-" highlight search result
-set hlsearch
-" show search result on every keystroke
-set incsearch
 " ignore case while searching
 set ignorecase
 " stop ignoring case while search query includes capitals
@@ -90,14 +80,10 @@ set clipboard=unnamedplus
 set tm=400
 " prefered number of lines before horizontal edges while scrolling
 set so=7
-" always display status line
-set laststatus=2
 " display opened file, working directory, column number, and branch
 set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}%h\ Column:\ %c\ %{GitBranch()}
 " display tab number and file name in tab line
 set tabline=%!TabLine()
-" set background to dark
-set background=dark
 " display vertical line
 set colorcolumn=120
 " vertical line settings
@@ -159,12 +145,6 @@ function! TabLine()
   return s
 endfunction
 
-" execute macro over lines in visual mode
-function! ExecuteMacroOverVisualRange()
-  echo "@".getcmdline()
-  execute ":'<,'>normal @".nr2char(getchar())
-endfunction
-
 " ‘W’ command saves file with sudo
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
@@ -196,14 +176,6 @@ nnoremap <silent> <C-_> :let @/ = ""<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
-" execute macro over lines in visual mode
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
-
-" vim-move. Gnome and macOS default terminals accept Alt as Esc so there is workaround for this behaviour
-execute "set <A-h>=\eh"
-execute "set <A-j>=\ej"
-execute "set <A-k>=\ek"
-execute "set <A-l>=\el"
 
 " NERD Commenter
 " toggle line commenting

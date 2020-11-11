@@ -1,5 +1,5 @@
 # .vimrc for Front-end Development
-Uses [vim-plug](https://github.com/junegunn/vim-plug). vim-X11 is recommended for system clipboard support
+Uses [vim-plug](https://github.com/junegunn/vim-plug). Neovim is considered as the only editor where you should use this file
 
 ## [macOS version](https://github.com/looshch/.vimrc/tree/macos)
 
