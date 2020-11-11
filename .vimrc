@@ -176,8 +176,6 @@ nnoremap <silent> <C-/> :let @/ = ""<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
-" execute macro over lines in visual mode
-xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " NERD Commenter
 " toggle line commenting
