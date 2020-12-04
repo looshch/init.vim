@@ -5,7 +5,9 @@ Uses [vim-plug](https://github.com/junegunn/vim-plug)
 [Yarn](https://yarnpkg.com/), [ack](https://beyondgrep.com/)
 
 ## Installation
-Wait for `Done in [time in seconds]` message, then run `:CocInstall` \
+Install dependencies \
+\
+Open Neovim, wait for `Done in [time in seconds]` message, then run `:CocInstall` \
 \
 It’s ok to observe some errors/warnings, just make sure you’ve completed execution of all the commands above. May
 require several Neovim restarts
