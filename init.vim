@@ -65,7 +65,7 @@ set splitbelow
 " set system clipboard as default register
 set clipboard+=unnamedplus
 " time to wait till mapping completion
-set tm=400
+set tm=150
 " prefered number of lines before horizontal edges while scrolling
 set so=7
 " display opened file, working directory, column number, and branch
@@ -175,9 +175,9 @@ let NERDTreeShowHidden=1
 " show relative line number
 let NERDTreeShowLineNumbers=1
 " toggle NERDTree
-nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>b :NERDTreeToggle<CR>
 " sync current tab with NERDTree
-nnoremap <silent> <leader>s :NERDTreeFind<CR>
+nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
 " file search
