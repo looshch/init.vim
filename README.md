@@ -38,10 +38,10 @@ jk &nbsp; enter normal mode
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \
 \
-\<Space\>n &nbsp; open file browser \
+\<Space\>b &nbsp; open file browser \
 &nbsp;&nbsp; o/t/s &nbsp; open file/in new tab/in vertical split view \
 &nbsp;&nbsp; m &nbsp; open context menu \
-\<Space\>s &nbsp; open current file in file browser \
+\<Space\>bb &nbsp; open current file in file browser \
 \<Space\>f &nbsp; file content search \
 &nbsp;&nbsp; o/t/v &nbsp; open file/in new tab/in vertical split view \
 \<Space\>ff &nbsp; file search \
