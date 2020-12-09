@@ -46,8 +46,6 @@ set smartindent
 set shiftwidth=2
 " round indentation to the nearest multiple of shiftwidth
 set shiftround
-" highlight cursor line
-set cursorline
 " highlight matching brackets when cursor is over them
 set showmatch
 " use % to jump between angle brackets
