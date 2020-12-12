@@ -56,7 +56,7 @@ set tm=150
 " prefered number of lines before horizontal edges while scrolling
 set so=7
 " display opened file, working directory, column number, and branch
-set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}%h\ Column:\ %c\ %{GitBranch()}
+set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}%h\ Column:\ %c
 " display tab number and file name in tab line
 set tabline=%!TabLine()
 " time before all plugins ruled by this setting take actions after typing
@@ -65,12 +65,6 @@ set updatetime=50
 au BufWritePre * %s/\s\+$//e
 " put cursor on last known position on open
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" show git branch name
-function! GitBranch()
-  let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-  return strlen(l:branchname) > 0 ? l:branchname : ''
-endfunction
 
 " tabs with order number instead of number of windows
 function! TabLine()
