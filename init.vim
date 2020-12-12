@@ -70,10 +70,6 @@ set so=7
 set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}%h\ Column:\ %c\ %{GitBranch()}
 " display tab number and file name in tab line
 set tabline=%!TabLine()
-" display vertical line
-set colorcolumn=120
-" vertical line settings
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 " time before all plugins ruled by this setting take actions after typing
 set updatetime=50
 " auto-trim whitespaces
