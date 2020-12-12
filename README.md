@@ -36,9 +36,9 @@ jk &nbsp; enter normal mode
 &nbsp;&nbsp; o/t/s &nbsp; open file/in new tab/in vertical split view \
 &nbsp;&nbsp; m &nbsp; open context menu \
 \<Space\>bb &nbsp; open current file in file browser \
-\<Space\>f &nbsp; file content search \
+\<Space\>s &nbsp; file content search \
 &nbsp;&nbsp; o/t/v &nbsp; open file/in new tab/in vertical split view \
-\<Space\>ff &nbsp; file search \
+\<Space\>ss &nbsp; file search \
 &nbsp;&nbsp; \<C-h/j/k/l\> &nbsp; navigate between search result \
 &nbsp;&nbsp; Enter &nbsp; open file \
 &nbsp;&nbsp; \<C-t/v\> &nbsp; open file in new tab/in vertical split view

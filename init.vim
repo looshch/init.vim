@@ -154,7 +154,7 @@ nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
 " file search
-nnoremap <leader>ff :GFiles<CR>
+nnoremap <leader>ss :GFiles<CR>
 
 " ack
 " Ack! call wrapped in function to prevent shell output
@@ -168,7 +168,7 @@ function Search(string) abort
   endtry
 endfunction
 " file content search
-nnoremap <leader>f :call Search("")<left><left>
+nnoremap <leader>s :call Search("")<left><left>
 
 " CoC
 " extensions
