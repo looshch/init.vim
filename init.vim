@@ -185,16 +185,9 @@ let g:coc_global_extensions = [ 'coc-pairs',
                               \ 'coc-tsserver',
                               \ 'coc-json',
                               \ 'coc-angular' ]
-" code action menu. If it doesn’t show up, just press J or K or increase updatetime setting
+" code action menu
 nmap <silent> <leader>a <Plug>(coc-codeaction)
 " go to definition
 nmap <silent> <leader>d :call CocAction('jumpDefinition', 'tab drop')<CR>
-" rename symbol. To rename as globally as possible, make sure you’re at the top of 'go to definition tree'
-" (<leader>d doesn’t move you nowhere)
+" rename symbol
 nmap <leader>r <Plug>(coc-rename)
-" confirm completion of selected item in suggestions on Enter
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
