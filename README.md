@@ -13,10 +13,6 @@ It’s ok to observe some errors/warnings, just make sure you’ve completed exe
 require several Neovim restarts
 
 ## Plugins
-[gruvbox](https://github.com/morhetz/gruvbox) — color scheme \
-[EditorConfig](https://github.com/editorconfig/editorconfig-vim) — editor config support \
-[vim-move](https://github.com/matze/vim-move) — move selected text \
-[NERD Commenter](https://github.com/preservim/nerdcommenter) — comment lines out \
 [NERDTree](https://github.com/preservim/nerdtree) — file browser \
 [fzf](https://github.com/junegunn/fzf) & [fzf.vim](https://github.com/junegunn/fzf.vim) — file search \
 [ack.vim](https://github.com/mileszs/ack.vim) — file content search \
@@ -32,8 +28,6 @@ jk &nbsp; enter normal mode
 \
 \? &nbsp; clear search query \
 \<C-s\> &nbsp; save all files in tabs \
-\<Alt-h/j/k/l\> &nbsp; move selected text \
-\<Space\>c &nbsp; toggle line commenting \
 \<Space\>a &nbsp; code action menu \
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \

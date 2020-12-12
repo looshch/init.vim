@@ -7,14 +7,6 @@ endif
 
 " plugins; Yarn, ack are required
 call plug#begin('~/.nvim/plugged')
-  " color scheme
-  Plug 'morhetz/gruvbox'
-  " editor config support
-  Plug 'editorconfig/editorconfig-vim'
-  " move selected text
-  Plug 'matze/vim-move'
-  " comment lines out
-  Plug 'preservim/nerdcommenter'
   " file browser
   Plug 'preservim/nerdtree'
   " file search back end
@@ -26,9 +18,6 @@ call plug#begin('~/.nvim/plugged')
   " language server
   Plug 'neoclide/coc.nvim'
 call plug#end()
-
-" theme
-colorscheme gruvbox
 
 " show line number
 set number
@@ -147,15 +136,11 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 " save all files in tabs
 nnoremap <silent> <C-s> :wa<CR>
-" clear search on <C-/>
+" clear search
 nnoremap <silent> ? :let @/ = ""<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
-
-" NERD Commenter
-" toggle line commenting
-map <silent> <leader>c :call NERDComment(0,"toggle")<CR>
 
 " NERDTree
 " quit vim if window on left is NERDTree
