@@ -26,6 +26,7 @@ jk &nbsp; enter normal mode
 \<Space\>=/- &nbsp; resize window \
 \<Space\>\[1–9] &nbsp; navigate between tabs \
 \
+\// &nbsp; search history \
 \? &nbsp; clear search query \
 \<C-s\> &nbsp; save all files in tabs \
 \<Space\>a &nbsp; code action menu \

@@ -130,6 +130,8 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 " save all files in tabs
 nnoremap <silent> <C-s> :wa<CR>
+" search history
+nnoremap // q/
 " clear search
 nnoremap <silent> ? :let @/ = ""<CR>
 " resize windows
