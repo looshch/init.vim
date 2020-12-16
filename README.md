@@ -28,6 +28,7 @@ jk &nbsp; enter normal mode
 \// &nbsp; search history \
 \? &nbsp; clear search query \
 \<C-s\> &nbsp; save all files in tabs \
+\<Space\>c &nbsp; toggle line commenting \
 \<Space\>a &nbsp; code action menu \
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \
@@ -47,4 +48,4 @@ W &nbsp; save file with sudo
 ## Abbreviations
 lll &nbsp; console.log(
 
-## [Vim cheat sheet with mappings and commands](https://docs.google.com/document/d/11iPRUc-0upxiVbDZnDmMhZxuTiiyPahBsCCReZBA2JQ)
+## [Vim cheat sheet with mappings and commands](https://docs.google.com/document/d/1TGOyrd-HYSskhuVrBA0N2WEI8PYHQuL1U73yelePwmE/edit?usp=sharing)
