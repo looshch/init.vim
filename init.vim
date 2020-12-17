@@ -13,8 +13,6 @@ call plug#begin('~/.nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   " file search
   Plug 'junegunn/fzf.vim'
-  " file content search
-  Plug 'mileszs/ack.vim'
   " language server
   Plug 'neoclide/coc.nvim'
 call plug#end()
@@ -156,21 +154,8 @@ nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
 " file search
+nnoremap <leader>s :Rg<CR>
 nnoremap <leader>ss :GFiles<CR>
-
-" ack
-" Ack! call wrapped in function to prevent shell output
-function Search(string) abort
-  let saved_shellpipe = &shellpipe
-  let &shellpipe = '>'
-  try
-    execute 'Ack! -i' shellescape(a:string, 1)
-  finally
-    let &shellpipe = saved_shellpipe
-  endtry
-endfunction
-" file content search
-nnoremap <leader>s :call Search("")<left><left>
 
 " CoC
 " extensions

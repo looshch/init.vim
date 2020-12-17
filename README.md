@@ -2,7 +2,7 @@
 Uses [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## Dependencies
-[Yarn](https://yarnpkg.com/), [ack](https://beyondgrep.com/)
+[Yarn](https://yarnpkg.com/), [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Installation
 Install dependencies \
@@ -15,7 +15,6 @@ require several Neovim restarts
 ## Plugins
 [NERDTree](https://github.com/preservim/nerdtree) — file browser \
 [fzf](https://github.com/junegunn/fzf) & [fzf.vim](https://github.com/junegunn/fzf.vim) — file search \
-[ack.vim](https://github.com/mileszs/ack.vim) — file content search \
 [Coc.nvim](https://github.com/neoclide/coc.nvim) — language server
 
 ## Insert Mode
@@ -37,9 +36,7 @@ jk &nbsp; enter normal mode
 &nbsp;&nbsp; o/t/s &nbsp; open file/in new tab/in vertical split view \
 &nbsp;&nbsp; m &nbsp; open context menu \
 \<Space\>bb &nbsp; open current file in file browser \
-\<Space\>s &nbsp; file content search \
-&nbsp;&nbsp; o/t/v &nbsp; open file/in new tab/in vertical split view \
-\<Space\>ss &nbsp; file search \
+\<Space\>s/ss &nbsp; file content/file search \
 &nbsp;&nbsp; \<C-h/j/k/l\> &nbsp; navigate between search result \
 &nbsp;&nbsp; Enter &nbsp; open file \
 &nbsp;&nbsp; \<C-t/v\> &nbsp; open file in new tab/in vertical split view
