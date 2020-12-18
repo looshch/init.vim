@@ -56,53 +56,13 @@ set tm=150
 " prefered number of lines before horizontal edges while scrolling
 set so=7
 " display opened file, working directory, column number, and branch
-set statusline=\ %F%m%r%h\ %w\ CWD:\ %r%{getcwd()}%h\ Column:\ %c
-" display tab number and file name in tab line
-set tabline=%!TabLine()
+set statusline=\ %F%m%r%h\ %w\ Column:\ %c
 " time before all plugins ruled by this setting take actions after typing
 set updatetime=50
 " auto-trim whitespaces
 au BufWritePre * %s/\s\+$//e
 " put cursor on last known position on open
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" tabs with order number instead of number of windows
-function! TabLine()
-  let s = ''
-  let wn = ''
-  let t = tabpagenr()
-  let i = 1
-  while i <= tabpagenr('$')
-    let buflist = tabpagebuflist(i)
-    let winnr = tabpagewinnr(i)
-    let s .= '%' . i . 'T'
-    let s .= (i == t ? '%1*' : '%2*')
-    let s .= ' '
-    let wn = tabpagewinnr(i,'$')
-    let s .= (i== t ? '%#TabNumSel#' : '%#TabNum#')
-    let s .= i
-    let s .= ' %*'
-    let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
-    let bufnr = buflist[winnr - 1]
-    let file = bufname(bufnr)
-    let buftype = getbufvar(bufnr, 'buftype')
-    if buftype == 'nofile'
-      if file =~ '\/.'
-        let file = substitute(file, '.*\/\ze.', '', '')
-      endif
-    else
-      let file = fnamemodify(file, ':p:t')
-    endif
-    if file == ''
-      let file = '—'
-    endif
-    let s .= file
-    let s .= (i == t ? '%m' : '')
-    let i = i + 1
-  endwhile
-  let s .= '%T%#TabLineFill#%='
-  return s
-endfunction
 
 " ‘W’ command saves file with sudo
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -155,8 +115,9 @@ nmap <silent> <leader>b :NERDTreeToggle<CR>
 nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
-" file search
+" file content search
 nnoremap <leader>s :Rg<CR>
+" file search
 nnoremap <leader>ss :GFiles<CR>
 
 " CoC
