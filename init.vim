@@ -170,8 +170,9 @@ nmap <silent> <leader>b :NERDTreeToggle<CR>
 nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
-" file search
+" file content search
 nnoremap <leader>s :Rg<CR>
+" file search
 nnoremap <leader>ss :GFiles<CR>
 
 " CoC
