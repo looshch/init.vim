@@ -53,7 +53,7 @@ set splitbelow
 set clipboard+=unnamedplus
 " time to wait till mapping completion
 set tm=150
-" prefered number of lines before horizontal edges while scrolling
+" preferred number of lines before horizontal edges while scrolling
 set so=7
 " display opened file, working directory, column number, and branch
 set statusline=\ %F%m%r%h\ %w\ Column:\ %c
