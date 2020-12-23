@@ -53,4 +53,4 @@ W &nbsp; save file with sudo
 ## Abbreviations
 lll &nbsp; console.log(
 
-## [Vim cheat sheet with mappings and commands](https://docs.google.com/document/d/1TGOyrd-HYSskhuVrBA0N2WEI8PYHQuL1U73yelePwmE/edit?usp=sharing)
+## [Vim cheat sheet with mappings and commands](https://docs.google.com/document/d/1TGOyrd-HYSskhuVrBA0N2WEI8PYHQuL1U73yelePwmE)
