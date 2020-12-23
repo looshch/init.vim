@@ -17,6 +17,8 @@ call plug#begin('~/.nvim/plugged')
   Plug 'neoclide/coc.nvim'
 call plug#end()
 
+" disable syntax highlighting
+syntax off
 " show line number
 set number
 " show line number relative to current one
@@ -109,6 +111,8 @@ let NERDTreeMinimalUI=1
 let NERDTreeShowHidden=1
 " show relative line number
 let NERDTreeShowLineNumbers=1
+" prevent ‘^G’ next to nodes
+let g:NERDTreeNodeDelimiter="\u00a0"
 " toggle NERDTree
 nmap <silent> <leader>b :NERDTreeToggle<CR>
 " sync current tab with NERDTree
