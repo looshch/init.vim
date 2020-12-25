@@ -15,7 +15,10 @@ require several Neovim restarts
 ## Plugins
 [NERDTree](https://github.com/preservim/nerdtree) — file browser \
 [fzf](https://github.com/junegunn/fzf) & [fzf.vim](https://github.com/junegunn/fzf.vim) — file search \
-[Coc.nvim](https://github.com/neoclide/coc.nvim) — language server
+[Coc.nvim](https://github.com/neoclide/coc.nvim) — language server \
+[splitjoin](https://github.com/AndrewRadev/splitjoin.vim) — swicth between single- and multi-line statement forms \
+[vim-surround](https://github.com/tpope/vim-surround) — change surroundings \
+[indentLine](https://github.com/Yggdroot/indentLine) — indentation markers
 
 ## Insert Mode
 jk &nbsp; enter normal mode
@@ -31,6 +34,9 @@ jk &nbsp; enter normal mode
 \<Space\>a &nbsp; code action menu \
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \
+\<Space\>j &nbsp; joined statement form \
+\<Space\>jj &nbsp; split statement form \
+cs[s1][s2] &nbsp; change surrounding 1 to surrounding 2 \
 \
 \<Space\>b &nbsp; open file browser \
 &nbsp;&nbsp; o/t/s &nbsp; open file/in new tab/in vertical split view \

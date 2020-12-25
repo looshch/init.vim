@@ -5,7 +5,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" plugins; Yarn, ack are required
+" plugins; Yarn, ripgrep are required
 call plug#begin('~/.nvim/plugged')
   " file browser
   Plug 'preservim/nerdtree'
@@ -15,6 +15,12 @@ call plug#begin('~/.nvim/plugged')
   Plug 'junegunn/fzf.vim'
   " language server
   Plug 'neoclide/coc.nvim'
+  " switch between single- and multi-line statement forms
+  Plug 'AndrewRadev/splitjoin.vim'
+  " change surroundings
+  Plug 'tpope/vim-surround'
+  " indentation markers
+  Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " disable syntax highlighting
@@ -23,7 +29,7 @@ syntax off
 set number
 " show line number relative to current one
 set relativenumber
-" each tab stops after every even number of chars
+" each tab stops after even number of chars
 set tabstop=2
 " tab indents by 2 spaces
 set softtabstop=2
@@ -37,6 +43,8 @@ set shiftwidth=2
 set shiftround
 " underline cursor line
 set cursorline
+" keep current column if there is no symbol on it
+set virtualedit=all
 " highlight matching brackets when cursor is over them
 set showmatch
 " use % to jump between angle brackets
@@ -54,13 +62,14 @@ set splitbelow
 " set system clipboard as default register
 set clipboard+=unnamedplus
 " time to wait till mapping completion
-set tm=150
+set timeoutlen=150
 " preferred number of lines before horizontal edges while scrolling
-set so=7
+set scrolloff=7
 " display opened file, working directory, column number, and branch
 set statusline=\ %F%m%r%h\ %w\ Column:\ %c
 " time before all plugins ruled by this setting take actions after typing
 set updatetime=50
+
 " auto-trim whitespaces
 au BufWritePre * %s/\s\+$//e
 " put cursor on last known position on open
@@ -72,7 +81,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " ‘lll’ and space produce console.log( )
 iabbrev lll console.log(
 
-let mapleader = " "
+let mapleader=" "
 
 imap jk <Esc>
 " navigate between windows
@@ -95,7 +104,7 @@ nnoremap <silent> <C-s> :wa<CR>
 " search history
 nnoremap // q/
 " clear search
-nnoremap <silent> ? :let @/ = ""<CR>
+nnoremap <silent> ? :let @/=""<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
@@ -103,7 +112,6 @@ nnoremap <silent> <leader>- :vertical resize -15<CR>
 " NERDTree
 " quit vim if window on left is NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" set default width to 70 symbols
 let NERDTreeWinSize=70
 " remove top text
 let NERDTreeMinimalUI=1
@@ -125,17 +133,20 @@ nnoremap <leader>s :Rg<CR>
 nnoremap <leader>ss :GFiles<CR>
 
 " CoC
-" extensions
-let g:coc_global_extensions = [ 'coc-pairs',
-                              \ 'coc-emmet',
-                              \ 'coc-html',
-                              \ 'coc-css',
-                              \ 'coc-tsserver',
-                              \ 'coc-json',
-                              \ 'coc-angular' ]
-" code action menu
+let g:coc_global_extensions=[ 'coc-pairs',
+                            \ 'coc-emmet',
+                            \ 'coc-html',
+                            \ 'coc-css',
+                            \ 'coc-tsserver',
+                            \ 'coc-json',
+                            \ 'coc-angular' ]
 nmap <silent> <leader>a <Plug>(coc-codeaction)
-" go to definition
 nmap <silent> <leader>d :call CocAction('jumpDefinition', 'tab drop')<CR>
-" rename symbol
 nmap <leader>r <Plug>(coc-rename)
+
+" splitjoin
+let g:splitjoin_split_mapping='<leader>jj'
+let g:splitjoin_join_mapping='<leader>j'
+
+" indentLine
+let g:indentLine_char='⎸'
