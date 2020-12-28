@@ -28,15 +28,17 @@ jk &nbsp; enter normal mode
 \<Space\>=/- &nbsp; resize window \
 \<Space\>\[1–9] &nbsp; navigate between tabs \
 \
-\// &nbsp; search history \
-\? &nbsp; clear search query \
+// &nbsp; search history \
+? &nbsp; clear search query \
 \<C-s\> &nbsp; save all files in tabs \
 \<Space\>a &nbsp; code action menu \
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \
 \<Space\>j &nbsp; joined statement form \
 \<Space\>jj &nbsp; split statement form \
-cs[s1][s2] &nbsp; change surrounding 1 to surrounding 2 \
+cs[surrounding 1][surrounding 2] &nbsp; change surrounding 1 to surrounding 2 \
+ds[surrounding] &nbsp; delete surrounding \
+ys[text object][surrounding] &nbsp; add surrounding \
 \
 \<Space\>b &nbsp; open file browser \
 &nbsp;&nbsp; o/t/s &nbsp; open file/in new tab/in vertical split view \
@@ -46,6 +48,9 @@ cs[s1][s2] &nbsp; change surrounding 1 to surrounding 2 \
 &nbsp;&nbsp; \<C-h/j/k/l\> &nbsp; navigate between search result \
 &nbsp;&nbsp; Enter &nbsp; open file \
 &nbsp;&nbsp; \<C-t/v\> &nbsp; open file in new tab/in vertical split view
+
+## Visual Mode
+S[surrounding] &nbsp; add surrounding
 
 ## Commands
 W &nbsp; save file with sudo
