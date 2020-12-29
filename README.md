@@ -42,7 +42,6 @@ jk &nbsp; enter normal mode
 \<Space\>r &nbsp; rename symbol \
 \<Space\>j &nbsp; joined statement form \
 \<Space\>jj &nbsp; split statement form \
-cs[s1][s2] &nbsp; change surrounding 1 to surrounding 2 \
 cs[surrounding 1][surrounding 2] &nbsp; change surrounding 1 to surrounding 2 \
 ds[surrounding] &nbsp; delete surrounding \
 ys[text object][surrounding] &nbsp; add surrounding \
