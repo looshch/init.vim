@@ -5,8 +5,14 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" plugins; Yarn, ripgrep are required
+" plugins; Yarn and ripgrep are required
 call plug#begin('~/.nvim/plugged')
+  " editor config support
+  Plug 'editorconfig/editorconfig-vim'
+  " move selected text
+  Plug 'matze/vim-move'
+  " comment selected text
+  Plug 'preservim/nerdcommenter'
   " file browser
   Plug 'preservim/nerdtree'
   " file search back end
@@ -35,6 +41,8 @@ set tabstop=2
 set softtabstop=2
 " use spaces instead of tabs
 set expandtab
+" copy current indentation to newly created line
+set autoindent
 " take into consideration file extension
 set smartindent
 " indentation for indenting tools
@@ -65,15 +73,55 @@ set clipboard+=unnamedplus
 set timeoutlen=150
 " preferred number of lines before horizontal edges while scrolling
 set scrolloff=7
-" display opened file, working directory, column number, and branch
-set statusline=\ %F%m%r%h\ %w\ Column:\ %c
+" display full path to opened file, modification and readonly flags, column number
+set statusline=\ %F%m%r\ Column:\ %v
+" display tab number and file name in tab line
+set tabline=%!TabLine()
 " time before all plugins ruled by this setting take actions after typing
 set updatetime=50
 
 " auto-trim whitespaces
 au BufWritePre * %s/\s\+$//e
 " put cursor on last known position on open
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au BufReadPost * if line('''"') > 1 && line('''"') <= line('$') | exe 'normal! g''"' | endif
+
+" tabs with order number instead of number of windows
+function! TabLine()
+  let s = ''
+  let wn = ''
+  let t = tabpagenr()
+  let i = 1
+  while i <= tabpagenr('$')
+    let buflist = tabpagebuflist(i)
+    let winnr = tabpagewinnr(i)
+    let s .= '%' . i . 'T'
+    let s .= (i == t ? '%1*' : '%2*')
+    let s .= ' '
+    let wn = tabpagewinnr(i,'$')
+    let s .= (i== t ? '%#TabNumSel#' : '%#TabNum#')
+    let s .= i
+    let s .= ' %*'
+    let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+    let bufnr = buflist[winnr - 1]
+    let file = bufname(bufnr)
+    let buftype = getbufvar(bufnr, 'buftype')
+    if buftype == 'nofile'
+      if file =~ '\/.'
+        let file = substitute(file, '.*\/\ze.', '', '')
+      endif
+    else
+      let file = fnamemodify(file, ':p:t')
+    endif
+    if file == ''
+      let file = '—'
+    endif
+    let s .= file
+    let s .= (i == t ? '%m' : '')
+    let i = i + 1
+  endwhile
+  let s .= '%T%#TabLineFill#%='
+  return s
+endfunction
 
 " ‘W’ command saves file with sudo
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
@@ -81,7 +129,8 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " ‘lll’ and space produce console.log( )
 iabbrev lll console.log(
 
-let mapleader=" "
+" <leader> set to space key
+let mapleader=' '
 
 imap jk <Esc>
 " navigate between windows
@@ -104,26 +153,31 @@ nnoremap <silent> <C-s> :wa<CR>
 " search history
 nnoremap // q/
 " clear search
-nnoremap <silent> ? :let @/=""<CR>
+nnoremap <silent> ? :let @/=''<CR>
 " resize windows
 nnoremap <silent> <leader>= :vertical resize +15<CR>
 nnoremap <silent> <leader>- :vertical resize -15<CR>
 
+" NERD Commenter
+" toggle line commenting
+map <silent> <leader>c :call NERDComment(0,'toggle')<CR>
+
 " NERDTree
 " quit vim if window on left is NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+" NERDTree window size equals to 70 symbols
 let NERDTreeWinSize=70
-" remove top text
+" remove help text
 let NERDTreeMinimalUI=1
 " show hidden files
 let NERDTreeShowHidden=1
 " show relative line number
 let NERDTreeShowLineNumbers=1
-" prevent ‘^G’ next to nodes
+" prevent ‘^G’ next to nodes. This is caused by ‘syntax off’
 let g:NERDTreeNodeDelimiter="\u00a0"
 " toggle NERDTree
 nmap <silent> <leader>b :NERDTreeToggle<CR>
-" sync current tab with NERDTree
+" open current file in NERDTree
 nnoremap <silent> <leader>bb :NERDTreeFind<CR>
 
 " fzf-vim
@@ -140,13 +194,16 @@ let g:coc_global_extensions=[ 'coc-pairs',
                             \ 'coc-tsserver',
                             \ 'coc-json',
                             \ 'coc-angular' ]
+" code action (imports, infer type, etc.)
 nmap <silent> <leader>a <Plug>(coc-codeaction)
+" jump to definition in new tab
 nmap <silent> <leader>d :call CocAction('jumpDefinition', 'tab drop')<CR>
+" rename symbol
 nmap <leader>r <Plug>(coc-rename)
 
 " splitjoin
-let g:splitjoin_split_mapping='<leader>jj'
 let g:splitjoin_join_mapping='<leader>j'
+let g:splitjoin_split_mapping='<leader>jj'
 
 " indentLine
 let g:indentLine_char='⎸'

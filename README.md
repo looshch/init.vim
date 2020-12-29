@@ -31,6 +31,8 @@ jk &nbsp; enter normal mode
 // &nbsp; search history \
 ? &nbsp; clear search query \
 \<C-s\> &nbsp; save all files in tabs \
+\<Alt-h/j/k/l\> &nbsp; move selected text \
+\<Space\>c &nbsp; toggle line commenting \
 \<Space\>a &nbsp; code action menu \
 \<Space\>d &nbsp; go to definition \
 \<Space\>r &nbsp; rename symbol \
